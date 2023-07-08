@@ -10,21 +10,21 @@ const Section1 = () => {
   const [participantCount, setParticipantCount] = useState("");
   const [teamCount, setTeamCount] = useState("");
 
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/admin/user`)
-      .then((data) => data.json())
-      .then((data) => {
-        setParticipantCount(data.usersCount);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/admin/user`)
+  //     .then((data) => data.json())
+  //     .then((data) => {
+  //       setParticipantCount(data.usersCount);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/admin/team`)
-      .then((data) => data.json())
-      .then((data) => {
-        setTeamCount(data.teamsCount);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/admin/team`)
+  //     .then((data) => data.json())
+  //     .then((data) => {
+  //       setTeamCount(data.teamsCount);
+  //     });
+  // }, []);
 
   return (
     <div className={styles.sec_1}>
@@ -60,13 +60,13 @@ const Section1 = () => {
           <div className={styles.count}>
             Registered Participants{" "}
             <Countup
-              end={`${participantCount}`}
+              end={`1600`}
               className={`${styles.countup}`}
             />
           </div>
           <div className={styles.count}>
-            Registered Teams{" "}
-            <Countup end={`${teamCount}`} className={`${styles.countup}`} />
+            Registered Teams{""}
+            <Countup end={`300`} className={`${styles.countup}`} />
           </div>
         </div>
         <p className={styles.main_para}>
